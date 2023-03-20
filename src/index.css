@@ -1,0 +1,12 @@
+.link{
+    color: white;
+}
+.nav-link{
+    color: rgb(255, 255, 255);
+}
+.active{
+    color: gray;
+}
+.navbar{
+    background-color: rgb(19, 19, 19);
+}

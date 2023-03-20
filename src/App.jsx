@@ -1,15 +1,18 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from './Components/Navbar';
-import { ItemList } from './Components/ItemList';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Navbar, ItemList, ItemListContainer } from "./Components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import '../src/index.css'
 
 const App = () => {
   return (
-    <>
-    <NavBar/>
-    <ItemList greeting="Hi 🌎"/>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/productos" element={<ItemListContainer/>} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;

@@ -1,25 +1,31 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import {FaBeer} from 'react-icons/fa'
-import { Nav, Navbar } from 'react-bootstrap';
+import React from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import "animate.css";
 
-export const NavBar = () => {
+export const Navbar = () => {
 
-  const style = {color: "white"}
   return (
-    <Navbar bg="dark" variant="dark">
-    <Container>
-      <Navbar.Brand href="#home">MarcaTienda</Navbar.Brand>
-      <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
-      </Nav>
-      <div>
-
-    <FaBeer/>
+    <nav className="animate__animated animate__bounce navbar navbar-expand-sm navbar-dark bg-dark">
+      <div className="container-fluid">
+        <div className="navbar-brand">
+          <NavLink 
+          to={'/'}
+          className= {'brand h2 text-decoration-none text-white'}
+          >
+            Tienda</NavLink>
+        </div>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link link ${isActive ? "active" : ""}`
+            }
+            to="/productos"
+          >
+            Productos
+          </NavLink>
+        </div>
       </div>
-    </Container>
-  </Navbar>
-  )
-}
+
+    </nav>
+  );
+};

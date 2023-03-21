@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import '../src/index.css'
 
 const App = () => {
+  
   return (
     <BrowserRouter>
       <Navbar />
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/category/:id" element={<ItemList/>} />
       </Routes>
     </BrowserRouter>
+
   );
 };
 

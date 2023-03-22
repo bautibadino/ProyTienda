@@ -1,27 +1,35 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-export const ItemList = () => {
-const [data, setData] = useState([])
-const { id } = useParams()
+export const ItemList = (props) => {
 
-const fetchData =  () =>{
-  const response = fetch('src/data/productos.json')
-  console.log(response);
-  setData(data)
-}
-
-  useEffect(() => {
-    try{
-      fetchData()
-    }
-    catch(error){
-      console.log(error)
-    }
-
-  }, [id])
-
-  return (
-    <div>ItemList</div>
-  )
+  const { productos } = props;
+  
+  console.log(productos);
+  
+  // return (
+  //   <div className="cards">
+  //   {productos.map((producto) => (
+  //     <div key={producto.id} className="card">
+  //       <img
+  //         src={producto.url_imagen}
+  //         className="card-img-top"
+  //         alt={producto.title}
+  //       />
+  //       <div className="card-body">
+  //         <h5 className="card-title">{producto.producto}</h5>
+  //       </div>
+  //       <button
+  //         className="btn btn-primary"
+  //         onClick={() => handleVerDetalle(producto.id)}
+  //       >
+  //         Ver detalle
+  //       </button>
+  //       <div className="card-footer">
+  //         <small className="text-muted"></small>
+  //       </div>
+  //     </div>
+  //   ))}
+  // </div>
+  // )
 }

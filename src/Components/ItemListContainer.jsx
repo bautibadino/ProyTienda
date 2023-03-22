@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Spinner } from "./spinner";
 
 export const ItemListContainer = () => {
@@ -8,54 +7,26 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     //el uso del try catch es opcional, pero es una buena practica
-    try {
-              const getProducts = async () => {
+    const getProducts = async () => {
+        try {
         //para hacer una funcion async en un useEffect, es necesario declararla dentro del useEffect
         setLoading(true);
-        const response = await fetch('src/data/productos.json');
+        const response = await fetch("src/data/productos.json");
         const data = await response.json();
         setProductos(data);
-        // setLoading(false);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
       };
-      getProducts();
-    } catch (error) {
-      console.log(error);
-    }
+    };
+    getProducts()
+
   }, []);
-
-  const navigate = useNavigate();
-
-  const handleVerDetalle = (id) => {
-    onSubmit(id);
-  }; //handler para pasar id a la funcion onSubmit
-
-  const onSubmit = (id) => {
-    navigate(`/category/${id}`);
-  }; //custom hook para navegar a la ruta de detalle de producto
-// le falta el !loading
-// le falta el !loading
-// le falta el !loading
-  if (loading) {
-    return (
-        <div className="cards">
-        {
-            productos.map((producto) => (
-              <div key={producto.id} className="card">
-                <img src={producto.url_imagen} className="card-img-top" alt={producto.title}/>
-                <div className="card-body">
-                  <h5 className="card-title">{producto.producto}</h5>
-                </div>
-                  <button className="btn btn-primary" onClick={() => handleVerDetalle(producto.id)}>Ver detalle</button>
-                <div className="card-footer">
-                    <small className="text-muted"></small>
-                </div>
-              </div>
-                    )
-            )}
-        </div>)
-  }else{
-    return (
-        <Spinner/>
-    );
+  productos
+    return(
+      <>
+        <ItemList productos={productos} />
+      </>
+    )
   }
-}; //aca se renderiza el componente ItemList
+

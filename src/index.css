@@ -29,7 +29,7 @@
 .card img{
     width: 100%;
     height: 10rem;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .card-body{

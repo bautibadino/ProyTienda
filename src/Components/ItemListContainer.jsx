@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Spinner } from "./spinner";
+import { ItemList } from "./ItemList";
 
 export const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -22,7 +22,7 @@ export const ItemListContainer = () => {
     getProducts()
 
   }, []);
-  productos
+
     return(
       <>
         <ItemList productos={productos} />

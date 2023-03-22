@@ -10,8 +10,8 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/productos" element={<ItemList/>} />
-        {/* <Route path="/category/:id" element={<ItemList/>} /> */}
+        <Route path="/productos" element={<ItemListContainer/>} />
+        {/* <Route path="/category/:id" element={} /> */}
       </Routes>
     </BrowserRouter>
 

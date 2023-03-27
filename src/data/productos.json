@@ -5,7 +5,7 @@
       "caracteristicas":"Pantalla Super Retina XDR de 6.1 pulgadas, Ceramic Shield, A16 Bionic, 5G, Cámara Pro, Modo Noche, Deep Fusion, HDR Inteligente 4, Apple ProRAW, grabación de video ProRes, LiDAR Scanner, MagSafe, Face ID, iOS 15",
       "url_imagen":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-unselect-gallery-2-202209?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1663790290203",
       "id":"1",
-      "cat": "iphone"
+      "category": "iphone"
     
     },
     {
@@ -14,7 +14,7 @@
       "caracteristicas":"Pantalla Super Retina XDR de 6.7 pulgadas, Ceramic Shield, A16 Bionic, 5G, Cámara Pro, Modo Noche, Deep Fusion, HDR Inteligente 4, Apple ProRAW, grabación de video ProRes, LiDAR Scanner, MagSafe, Face ID, iOS 15",
       "url_imagen":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-unselect-gallery-2-202209?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1663790290203",
       "id":"2",
-      "cat": "iphone"
+      "category": "iphone"
     
     },
     {
@@ -23,7 +23,7 @@
       "caracteristicas":"Pantalla Super Retina XDR de 6.1 pulgadas, Ceramic Shield, A16 Bionic, 5G, Cámara Pro, Modo Noche, Deep Fusion, HDR Inteligente 4, Apple ProRAW, grabación de video ProRes, MagSafe, Face ID, iOS 15",
         "url_imagen":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027942322",
       "id":"3",
-      "cat": "iphone"
+      "category": "iphone"
 
     },
     {
@@ -32,7 +32,7 @@
       "caracteristicas":"Pantalla Super Retina XDR de 6.1 pulgadas, Ceramic Shield, A16 Bionic, 5G, Cámara Pro, Modo Noche, Deep Fusion, HDR Inteligente 4, Apple ProRAW, grabación de video ProRes, MagSafe, Face ID, iOS 15",
       "url_imagen":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027942322",
       "id":"4",
-      "cat": "iphone"
+      "category": "iphone"
     
     },
     {
@@ -41,7 +41,7 @@
       "caracteristicas":"Pantalla Retina HD de 4.7 pulgadas, A13 Bionic, Modo Retrato, Iluminación de Retrato, HDR Inteligente de próxima generación, Grabación de video 4K, Touch ID, iOS 15",
       "url_imagen":"https://media.gq.com.mx/photos/63fe1d170afbb2d40923a80f/16:9/w_2992,h_1683,c_limit/iphone%20se.jpg",
       "id":"5",
-      "cat": "iphone"
+      "category": "iphone"
       
     },
     {
@@ -50,7 +50,7 @@
       "caracteristicas":"Chip M1 de Apple con CPU de 8 núcleos y GPU de 7 núcleos, Neural Engine de 16 núcleos, 8 GB de memoria unificada, SSD de 256 GB, Pantalla Retina de 13.3 pulgadas con True Tone, Magic Keyboard, Touch ID, Touch Bar y trackpad Force Touch, Dos puertos Thunderbolt/USB 4, Wi-Fi 6, macOS",
       "url_imagen":"https://sm.pcmag.com/pcmag_uk/review/a/apple-macb/apple-macbook-air-m1-late-2020_ksbd.jpg",
       "id":"6",
-      "cat": "macbook"
+      "category": "macbook"
     },
     {
       "producto":"MacBook Pro de 13 pulgadas",
@@ -58,7 +58,7 @@
       "caracteristicas":"Chip M1 de Apple con CPU de 8 núcleos y GPU de 8 núcleos, Neural Engine de 16 núcleos, 8 GB de memoria unificada, SSD de 256 GB, Pantalla Retina de 13.3 pulgadas con True Tone, Magic Keyboard, Touch Bar y trackpad Force Touch, Dos puertos Thunderbolt/USB 4, Wi-Fi 6, macOS",
       "url_imagen":"https://innovatech.ar/wp-content/uploads/2021/08/Teknofilo-Image-064-1280x717-1.jpg",
       "id":"7",
-      "cat": "macbook"
+      "category": "macbook"
     },
     {
       "producto":"MacBook Pro de 16 pulgadas",
@@ -66,7 +66,7 @@
       "caracteristicas":"Procesador Intel Core i9 de 8 núcleos de novena generación, AMD Radeon Pro 5500M con memoria GDDR6 de 4 GB, Pantalla Retina de 16 pulgadas con True Tone, Touch Bar y Touch ID, 16 GB de memoria DDR4, SSD de 512 GB, Cuatro puertos Thunderbolt 3, Wi-Fi 802.11ac, macOS",
       "url_imagen":"https://www.cnet.com/a/img/resize/c55c6e326fb3b056fdd91232d41d3bbd1ddecc1c/hub/2021/10/23/3f7efb9e-d587-45ff-a0a8-056d81bc102e/macbook-pro-2021-cnet-review-21.jpg?auto=webp&fit=crop&height=675&width=1200",
       "id":"8",
-      "cat": "macbook"
+      "category": "macbook"
     },
     {
       "producto":"iPad",
@@ -74,7 +74,7 @@
       "caracteristicas":"Pantalla Retina de 10.2 pulgadas, Chip A13 Bionic con Neural Engine, Touch ID para autenticación segura y Apple Pay, Cámara trasera de 8 MP, Cámara frontal FaceTime HD de 1.2 MP, Altavoces estéreo, Wi-Fi 6 (802.11ax), Hasta 10 horas de duración de la batería, iPadOS 15",
       "url_imagen":"https://www.apple.com/newsroom/images/product/ipad/standard/Apple_iPad-10-2-inch_Ninth-Gen_09142021_big.jpg.large_2x.jpg",
       "id":"9",
-      "cat": "ipad"
+      "category": "ipad"
     },
     {
       "producto":"iPad Air",
@@ -82,7 +82,7 @@
       "caracteristicas":"Pantalla Liquid Retina de 10.9 pulgadas, Chip A14 Bionic con Neural Engine, Touch ID para autenticación segura y Apple Pay, Cámara trasera de 12 MP y cámara frontal FaceTime HD de 7 MP, Altavoces estéreo, Wi-Fi 6 (802.11ax), Hasta 10 horas de duración de la batería, iPadOS 15",
       "url_imagen":"https://www.apple.com/newsroom/images/product/ipad/standard/apple_new-ipad-air_new-design_09152020.jpg.og.jpg?202303021730",
       "id":"10",
-      "cat": "ipad"
+      "category": "ipad"
     },
     {
       "producto":"iPad mini",
@@ -90,7 +90,7 @@
       "caracteristicas":"Pantalla Retina de 8.3 pulgadas, Chip A15 Bionic con Neural Engine, Touch ID para autenticación segura y Apple Pay, Cámara trasera de 12 MP y cámara frontal FaceTime HD de 12 MP, Altavoces estéreo, Wi-Fi",
       "url_imagen":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-mini-finish-select-gallery-202211-space-gray-wifi_AV1_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1670631639153",
       "id":"11",
-      "cat": "ipad"
+      "category": "ipad"
       
     }
   ]

@@ -20,7 +20,7 @@ export const Navbar = () => {
             className={({ isActive }) =>
               `nav-item nav-link link ${isActive ? "active" : ""}`
             }
-            to="/category/iphone"
+            to="/iphone"
           >
             Iphone
           </NavLink>
@@ -28,7 +28,7 @@ export const Navbar = () => {
             className={({ isActive }) =>
               `nav-item nav-link link ${isActive ? "active" : ""}`
             }
-            to="/category/macbook"
+            to="/macbook"
           >
             Macbook
           </NavLink>
@@ -36,7 +36,7 @@ export const Navbar = () => {
             className={({ isActive }) =>
               `nav-item nav-link link ${isActive ? "active" : ""}`
             }
-            to="/category/ipad"
+            to="/ipad"
           >
             Ipad
           </NavLink>

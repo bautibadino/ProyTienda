@@ -9,7 +9,6 @@ export const ItemListContainer = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    
     setLoading(true);
     fetch("/src/data/productos.json")
       .then((response) => response.json())
@@ -19,9 +18,7 @@ export const ItemListContainer = () => {
         } else {
           setProductos(data);
         }
-        setTimeout(() => {
-      setLoading(false)
-        }, 1000);
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   }, [category]);

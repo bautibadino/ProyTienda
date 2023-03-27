@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { ItemList } from "./ItemList";
+import { Spinner } from "react-bootstrap";
 
 export const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { category } = useParams();
 
   useEffect(() => {
-    //el uso del try catch es opcional, pero es una buena practica
-    const getProducts = async () => {
-        try {
-        //para hacer una funcion async en un useEffect, es necesario declararla dentro del useEffect
-        setLoading(true);
-        const response = await fetch("src/data/productos.json");
-        const data = await response.json();
-        setProductos(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      };
-    };
-    getProducts()
+    
+    setLoading(true);
 
-  }, []);
+    fetch("/src/data/productos.json") // Asegúrate de que la ruta sea correcta
+      .then((response) => response.json())
+      .then((data) => {
+        if (category) {
+          setProductos(data.filter((item) => item.category === category));
+        } else {
+          setProductos(data);
+        }
+        setTimeout(() => {
+      setLoading(false)
+        }, 1500);
+      })
+      .catch((error) => console.error(error));
+  }, [category]);
 
-    return(
-      <>
-        <ItemList productos={productos} />
-      </>
-    )
-  }
-
+  return (
+    <div className="container">
+      {loading ? <Spinner /> : <ItemList productos={productos} />}
+    </div>
+  );
+};

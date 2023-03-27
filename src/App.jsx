@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, ItemList, ItemListContainer } from "./Components";
+import { Navbar, ItemList, ItemListContainer, ItemDetailContainer} from "./Components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import '../src/index.css'
 
@@ -10,8 +10,16 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/productos" element={<ItemListContainer/>} />
-        {/* <Route path="/category/:id" element={} /> */}
+        <Route 
+        path="/" 
+        element={<ItemListContainer/>} />
+        <Route 
+        path="/category" 
+        element={<ItemListContainer/>
+      } />
+        <Route 
+        path="/category/:cat" 
+        element={<ItemDetailContainer/>} />
       </Routes>
     </BrowserRouter>
 

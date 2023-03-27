@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "animate.css";
+import { CartWidget } from "./CartWidget";
 
 export const Navbar = () => {
 
@@ -19,13 +20,29 @@ export const Navbar = () => {
             className={({ isActive }) =>
               `nav-item nav-link link ${isActive ? "active" : ""}`
             }
-            to="/productos"
+            to="/iphone"
           >
-            Productos
+            Iphone
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link link ${isActive ? "active" : ""}`
+            }
+            to="/macbook"
+          >
+            Macbook
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link link ${isActive ? "active" : ""}`
+            }
+            to="/ipad"
+          >
+            Ipad
           </NavLink>
         </div>
       </div>
-
+        <CartWidget />
     </nav>
   );
 };

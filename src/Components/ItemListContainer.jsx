@@ -11,8 +11,7 @@ export const ItemListContainer = () => {
   useEffect(() => {
     
     setLoading(true);
-
-    fetch("/src/data/productos.json") // Asegúrate de que la ruta sea correcta
+    fetch("/src/data/productos.json")
       .then((response) => response.json())
       .then((data) => {
         if (category) {
@@ -22,7 +21,7 @@ export const ItemListContainer = () => {
         }
         setTimeout(() => {
       setLoading(false)
-        }, 1500);
+        }, 1000);
       })
       .catch((error) => console.error(error));
   }, [category]);

@@ -5,7 +5,7 @@ import {ImCart} from 'react-icons/im'
 export const CartWidget = () => {
   return (
     <div>
-      <ImCart size="1.5em" color="white"/>
+      <ImCart className="carrito" size="1.3em" color="white"/>
     </div>
   )
 }

@@ -24,7 +24,7 @@ export const ItemListContainer = () => {
   }, [category]);
 
   return (
-    <div className="container">
+    <div className="container animate__animated animate__fadeInLeftBig">
       {loading ? <Spinner /> : <ItemList productos={productos} />}
     </div>
   );

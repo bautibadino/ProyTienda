@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "animate.css";
 import { CartWidget } from "./CartWidget";
+import { Nav } from "react-bootstrap";
 
 export const Navbar = () => {
 
@@ -42,7 +43,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </div>
+      <NavLink to={'/carrito'} className="nav-item nav-link link">
         <CartWidget />
+      </NavLink>
     </nav>
   );
 };

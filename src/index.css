@@ -1,6 +1,3 @@
-.link {
-    color: white;
-}
 
 .nav-link {
     color: rgb(255, 255, 255);
@@ -30,17 +27,22 @@ section {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .card {
     width: 25rem;
-    height: 20rem;
-    margin: 10px;
+    min-height: 20rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    backdrop-filter: blur(15px);
 }
 
 .card img {
@@ -48,12 +50,20 @@ section {
     height: 10rem;
     object-fit: cover;
 }
-
+.button-card{
+    width: 60%;
+    height: 2.5rem;
+    color: rgb(255, 247, 247);
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(41, 84, 152);
+}
 .card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    justify-content: space-around;
 }
 
 .card-body p {
@@ -307,7 +317,7 @@ section {
 }
 
 button {
-    margin: 20px;
+    margin: 0px 20px;
   }
   .custom-btn {
     width: 130px;

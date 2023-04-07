@@ -20,14 +20,11 @@ export const Item = ( {producto} ) => {
           <h5 className="card-title">{producto.producto}</h5>
         </div>
         <button
-          className="btn btn-primary"
+          className="button-card"
           onClick={() => handleClick(producto.id)}
         >
           Ver detalle
         </button>
-        <div className="card-footer">
-          <small className="text-muted"></small>
-        </div>
       </div>
   )
 }

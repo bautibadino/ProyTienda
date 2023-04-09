@@ -6,24 +6,26 @@ import { Context } from "../../Context/Context";
 
 
 export const ItemDetail = ({ item  }) => {
+
+  const algo = useContext(Context)
+
   const [cart, setCart] = useState([]);
   const [counter, setCounter] = useState(1);
 
-  const algo = useContext(Context)
   const addToCart = () => {
-    const itemToAdd = {
-      id: item.id,
-      producto: item.producto,
-      precio: item.precio,
-      url_imagen: item.url_imagen,
-      cantidad: counter,
-
+      const itemToAdd = {
+        id: item.id,
+        producto: item.producto,
+        precio: item.precio,
+        url_imagen: item.url_imagen,
+        cantidad: counter,
+      };
+  
+      
+      setCart([...cart, itemToAdd ]);
+      setCounter(1);
     };
-    console.log(algo);
-
-    setCart([...cart, itemToAdd ]);
-    setCounter(1);
-  };
+    
 
   const { producto, precio, caracteristicas, url_imagen, category, id, stock } =
     item;

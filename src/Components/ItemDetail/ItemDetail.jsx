@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import Description from "./Description";
 import { ItemQuantitySelector } from "./itemQuantitySelector";
+import { Context } from "../../Context/Context";
 
 
 export const ItemDetail = ({ item  }) => {
   const [cart, setCart] = useState([]);
   const [counter, setCounter] = useState(1);
 
-  
+  const algo = useContext(Context)
   const addToCart = () => {
     const itemToAdd = {
       id: item.id,
@@ -16,7 +17,9 @@ export const ItemDetail = ({ item  }) => {
       precio: item.precio,
       url_imagen: item.url_imagen,
       cantidad: counter,
+
     };
+    console.log(algo);
 
     setCart([...cart, itemToAdd ]);
     setCounter(1);

@@ -6,13 +6,15 @@ import { Context } from "../../Context/Context";
 
 export const ItemDetail = ({ item  }) => {
   const [counter, setCounter] = useState(1);
-  const value = useContext(Context)
-  const { producto, precio, caracteristicas, url_imagen, category, id, stock } =
-    item;
+  const value = useContext(Context);
+  const {addToCart, cart} = value;
+  const { producto, precio, caracteristicas, url_imagen, category, id, stock } = item;
+  
+  const onAdd = (counter) => {
+    addToCart(item, counter);
+  };
 
-  const {addToCart, cart} = value
-  console.log(cart);
-  const handleCounterChange = (value) => {
+    const handleCounterChange = (value) => {
     setCounter(value);
   };
 
@@ -25,7 +27,7 @@ export const ItemDetail = ({ item  }) => {
         <Description 
         text={caracteristicas}/> 
         <ItemQuantitySelector value={counter} onValueChange={handleCounterChange} />
-        <button onClick={addToCart}  className="button-card">
+        <button onClick={onAdd}  className="button-card">
           Agregar a mi carrito
         </button>
       </div>

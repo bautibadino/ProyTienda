@@ -4,8 +4,10 @@ import { Context } from './Context'
 export const Provider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [counter, setCounter] = useState(1);
+    const [item, setItem] = useState({});
   
-    const addToCart = () => {
+
+    const addToCart = (item, quantity) => {
         const itemToAdd = {
           id: item.id,
           producto: item.producto,

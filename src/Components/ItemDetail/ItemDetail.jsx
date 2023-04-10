@@ -4,36 +4,17 @@ import Description from "./Description";
 import { ItemQuantitySelector } from "./itemQuantitySelector";
 import { Context } from "../../Context/Context";
 
-
 export const ItemDetail = ({ item  }) => {
-
-  const algo = useContext(Context)
-
-  const [cart, setCart] = useState([]);
   const [counter, setCounter] = useState(1);
-
-  const addToCart = () => {
-      const itemToAdd = {
-        id: item.id,
-        producto: item.producto,
-        precio: item.precio,
-        url_imagen: item.url_imagen,
-        cantidad: counter,
-      };
-  
-      
-      setCart([...cart, itemToAdd ]);
-      setCounter(1);
-    };
-    
-
+  const value = useContext(Context)
   const { producto, precio, caracteristicas, url_imagen, category, id, stock } =
     item;
 
+  const {addToCart, cart} = value
+  console.log(cart);
   const handleCounterChange = (value) => {
     setCounter(value);
   };
-
 
 
   return (

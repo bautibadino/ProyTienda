@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import productos from '../../data/productos.json'
+import { Spinner } from 'react-bootstrap';
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
@@ -24,7 +25,7 @@ export const ItemDetailContainer = () => {
 
   return(
     <section className="animate__animated animate__lightSpeedInRight container">
-      {loading ? <h1>Cargando...</h1> :  <ItemDetail item={item}/>}
+      {loading ? <Spinner/> :  <ItemDetail item={item}/>}
     </section>
   ) 
 }

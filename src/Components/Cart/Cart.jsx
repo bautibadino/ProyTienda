@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../Context/Context'
 
 
-export const Cart = ({itemToAdd}) => {
-    
+export const Cart = () => {
+  const itemToAdd = useContext(Context)
+  console.log(itemToAdd)
   return (
     <>
         <h4>tu carrito 🤩</h4>

@@ -10,6 +10,8 @@ export const Item = ( {producto} ) => {
   }
 
   return (
+
+      
       <div key={producto.id} className="card">
         <img
           src={producto.url_imagen}

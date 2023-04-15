@@ -24,8 +24,8 @@ export const ItemDetailContainer = () => {
   console.log();
 
   return(
-    <section className="animate__animated animate__lightSpeedInRight container">
-      {loading ? <Spinner/> :  <ItemDetail item={item}/>}
-    </section>
+    <div className="d-flex animate__animated animate__lightSpeedInRight container">
+      {loading ? <div className='container-spinner'><Spinner/> </div>:  <ItemDetail item={item}/>}
+    </div>
   ) 
 }

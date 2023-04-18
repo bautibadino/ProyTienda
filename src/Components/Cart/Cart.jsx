@@ -11,7 +11,7 @@ export const Cart = () => {
     navigate('/carrito/checkout');
   }
 
-  console.log(cart);
+
   if (cart.length === 0) {
     return (
       <div>

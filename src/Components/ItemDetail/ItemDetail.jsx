@@ -1,29 +1,14 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
-import Description from "./Description";
 import { ItemQuantitySelector } from "./itemQuantitySelector";
 import { Context } from "../../Context/Context";
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardText,
-  MDBCol,
-  MDBContainer,
-  MDBIcon,
-  MDBInput,
-  MDBRow,
-  MDBTypography,
-} from "mdb-react-ui-kit";
+
 
 export const ItemDetail = ({ item }) => {
   const [counter, setCounter] = useState(1);
   const value = useContext(Context);
   const { addToCart, cart } = value;
-  const { producto, precio, caracteristicas, url_imagen, category, id, stock } =
-    item;
-
+  const { producto, precio, caracteristicas, url_imagen, category, id, stock } = item;
+    console.log(item)
   const onAdd = (counter) => {
     addToCart(item, counter);
     setCounter(1);

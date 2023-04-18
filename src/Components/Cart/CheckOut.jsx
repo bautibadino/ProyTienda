@@ -2,28 +2,35 @@ import React, { useContext, useState } from "react";
 import { Context } from "../../Context/Context";
 import { Link } from "react-router-dom";
 import { MDBBtn } from "mdb-react-ui-kit";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 export const CheckOut = () => {
   const cart = useContext(Context);
   const [loading, setLoading] = useState(false);
-  const [datos, setDatos] = useState({
-    nombre: "",
-    apellido: "",
-    direccion: "",
-    ciudad: "",
-    provincia: "",
-    codigoPostal: "",
-    telefono: "",
-    email: "",
-    emailConfirm: "",
-  });
+  const [datos, setDatos] = useState({});
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setDatos({
+      ...datos,
+      [e.target.name]: e.target.value,
+    });
+  };
+  
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCliente((prevCliente) => ({ ...prevCliente, [name]: value }));
-  };
+    const ventas = collection(db , 'orders')
+    const newVenta = {
+      buyer: datos,
+      items: cart.cart,
+      date: new Date()
+    }
+    addDoc(ventas, newVenta)
+      console.log(newVenta);
+  }
 
   return (
     <div className="container-checkout">
@@ -125,7 +132,7 @@ export const CheckOut = () => {
             value={datos.emailConfirm}
           />
 
-          <button onClick={handleSubmit} type="button" class="btn btn-primary">
+          <button onClick={handleSubmit} type="button" className="btn btn-primary">
             Comprar
           </button>
         </form>

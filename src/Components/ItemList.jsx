@@ -6,6 +6,7 @@ import { Card } from "./Card";
 
 
 export const ItemList = ({ productos }) => {
+  console.log(productos);
   return (
     <div className="cards d-flex flex-row justify-content-center align-items-center flex-wrap">
       {productos.map((producto) => {

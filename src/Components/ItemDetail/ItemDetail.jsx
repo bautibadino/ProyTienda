@@ -25,7 +25,7 @@ export const ItemDetail = ({ item }) => {
           <div className="detalle-producto">
             <h4>{producto}</h4>
             <p>{caracteristicas}</p>
-            <p>{precio}</p>
+            <p>${precio}</p>
             <ItemQuantitySelector
               value={counter}
               onValueChange={handleCounterChange}

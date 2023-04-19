@@ -12,7 +12,7 @@ export const CheckOut = () => {
   const [loading, setLoading] = useState(false);
   const [datos, setDatos] = useState({});
   const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
-
+  const [pedidoAceptado, setPedidoAceptado] = useState(false);
   const handleChange = (e) => {
     e.preventDefault();
     setDatos({
@@ -29,20 +29,26 @@ export const CheckOut = () => {
       total += totalItem;
     }
     setTotalCheckoutitems(total);
-    return total;
   };
 
-  const handleSubmit = (e) => {
-    handleCheckout();
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    handleCheckout();
     const ventas = collection(db, "orders");
+
     const newVenta = {
       buyer: datos,
       items: cart.cart,
       date: new Date(),
+
     };
-    addDoc(ventas, newVenta);
+    await addDoc(ventas, newVenta);
+    setPedidoAceptado(true);
+    setTimeout(() => {
+      setPedidoAceptado(false);
+    }, 2500);
   };
+  
 
   useEffect(() => {
     handleCheckout();
@@ -69,13 +75,13 @@ export const CheckOut = () => {
                 <div className="d-flex align-items-center justify-content-center col w-25">
                   <span></span>
                 </div>
-                <div className="d-flex align-items-center justify-content-center col w-25">
+                <div className="d-flex align-items-center justify-content-center col w-25 p-2 border-bottom">
                   <small>unidades</small>
                 </div>
-                <div className="d-flex align-items-center justify-content-center col w-25">
+                <div className="d-flex align-items-center justify-content-center col w-25 p-2 border-bottom">
                   <small>producto</small>
                 </div>
-                <div className="d-flex align-items-center justify-content-center col w-25">
+                <div className="d-flex align-items-center justify-content-center col w-25 p-2 border-bottom">
                   <small>precio</small>
                 </div>
               </div>
@@ -115,8 +121,8 @@ export const CheckOut = () => {
           <div className="">
             <h4>Datos de envio</h4>
             <form>
-              <div class="row">
-                <div class="col">
+              <div className="row">
+                <div className="col">
                   <input
                     onChange={handleChange}
                     type="text"
@@ -180,13 +186,15 @@ export const CheckOut = () => {
               />
 
               <button
-                onClick={() => (handleCheckout, handleSubmit)}
-                type="button"
+                onSubmit={(e) => (handleCheckout, handleSubmit)}
+                type='submit'
                 className="btn btn-primary"
               >
                 Comprar
               </button>
+
             </form>
+        {pedidoAceptado && <div>aceptado</div> }
           </div>
         </div>
     </Container>

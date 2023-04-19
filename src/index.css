@@ -78,7 +78,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video, ul, li{
+    padding-left: 0;
     margin: 0;
     padding: 0;
     border: 0;
@@ -464,6 +465,7 @@ button {
     grid-template-columns: 1fr;
     gap: 0px;
     justify-items: center;
+    min-height: 80vh;
 }
 .productos-checkout h4{
     margin-top: 20px;

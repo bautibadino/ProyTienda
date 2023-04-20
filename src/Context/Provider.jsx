@@ -5,7 +5,7 @@ export const Provider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [item, setItem] = useState({});
 
-
+  
   const addToCart = (item, quantity) => {
     const numberPrice = Number(item.precio);
 
@@ -35,8 +35,28 @@ export const Provider = ({ children }) => {
     setCart(cart.filter((item) => item.id !== itemId));
   };
 
+  const getTotalItems = (cart) => {
+    let totalItems = 0;
+    cart.forEach((itemCart) => {
+      totalItems += itemCart.cantidad;
+    });
+    return totalItems;
+  };
+
+  const getTotalCheckout = (cart) => {
+    const total = cart.reduce((accumulator, itemCart) => {
+      const totalItem = Number(itemCart.precio) * itemCart.cantidad;
+      return accumulator + totalItem;
+    }, 0);
+    return total;
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  }
+  
   return (
-    <Context.Provider value={{ addToCart, cart, handleSetCart }}>
+    <Context.Provider value={{ addToCart, cart, handleSetCart,getTotalCheckout, getTotalItems, clearCart, }}>
       {" "}
       {children}{" "}
     </Context.Provider>

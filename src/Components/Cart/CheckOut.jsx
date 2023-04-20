@@ -9,6 +9,7 @@ import { MDBBtn } from "mdb-react-ui-kit";
 
 export const CheckOut = () => {
   const cart = useContext(Context);
+  const {getTotalCheckout, getTotalItems, clearCart} = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [datos, setDatos] = useState({});
   const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
@@ -24,20 +25,15 @@ export const CheckOut = () => {
   };
 
   const handleCheckout = () => {
-    let total = 0;
-    for (let i = 0; i < cart.cart.length; i++) {
-      const itemCart = cart.cart[i];
-      const totalItem = Number(itemCart.precio) * itemCart.cantidad;
-      total += totalItem;
-    }
-    setTotalCheckoutitems(total);
+    const totalItems = getTotalItems(cart.cart);
+    const totalCheckout = getTotalCheckout(cart.cart);
+    setTotalCheckoutitems(totalCheckout);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCheckout();
     setLoading(true);
-
     const ventas = collection(db, "orders");
 
     const newVenta = {
@@ -52,6 +48,7 @@ export const CheckOut = () => {
     setTimeout(() => {
       setPedidoAceptado(false)
     }, 2500);
+    clearCart()
   };
   
 

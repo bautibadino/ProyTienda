@@ -13,12 +13,14 @@ export const CheckOut = () => {
   const [datos, setDatos] = useState({});
   const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
   const [pedidoAceptado, setPedidoAceptado] = useState(false);
+  
   const handleChange = (e) => {
     e.preventDefault();
     setDatos({
       ...datos,
       [e.target.name]: e.target.value,
     });
+
   };
 
   const handleCheckout = () => {
@@ -34,18 +36,21 @@ export const CheckOut = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleCheckout();
+    setLoading(true);
+
     const ventas = collection(db, "orders");
 
     const newVenta = {
       buyer: datos,
       items: cart.cart,
       date: new Date(),
-
     };
     await addDoc(ventas, newVenta);
+    setLoading(false);
     setPedidoAceptado(true);
+
     setTimeout(() => {
-      setPedidoAceptado(false);
+      setPedidoAceptado(false)
     }, 2500);
   };
   
@@ -132,7 +137,7 @@ export const CheckOut = () => {
                     value={datos.nombre}
                   />
                 </div>
-                <div class="col">
+                <div className="col">
                   <input
                     onChange={handleChange}
                     type="text"

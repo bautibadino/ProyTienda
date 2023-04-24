@@ -506,7 +506,13 @@ button {
     align-items: center;
     height: 100%;
 }
-.datos-checkout form{
+.datos-checkout div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.datos-checkout div form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;

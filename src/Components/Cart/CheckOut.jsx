@@ -24,15 +24,13 @@ export const CheckOut = () => {
 
   };
 
-  const handleCheckout = () => {
-    const totalItems = getTotalItems(cart.cart);
-    const totalCheckout = getTotalCheckout(cart.cart);
-    setTotalCheckoutitems(totalCheckout);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleCheckout();
+
+    getTotalCheckout(cart.cart)
+    getTotalItems(cart.cart)
+    
     setLoading(true);
     const ventas = collection(db, "orders");
 
@@ -46,21 +44,18 @@ export const CheckOut = () => {
     setPedidoAceptado(true);
 
     setTimeout(() => {
-      setPedidoAceptado(false)
+      // setPedidoAceptado(false)
     }, 2500);
     clearCart()
   };
   
 
-  useEffect(() => {
-    handleCheckout();
-  }, [cart]);
 
   return (
     // CONTAINER GENERAL CHECKOUT
     <Container className="d-flex flex-row">
       <div className="productos-checkout">
-        {/* SI EL CARRITO TIENE 0 PRODUCTOS MUESTRA ESTO */}
+        {/* SI EL CARRITO TIENE 0 PRODUCTOS MUESTRA ESTO   */}
         <h4>Tus productos</h4>
         {cart.cart.length === 0 ? (
           <>
@@ -122,7 +117,7 @@ export const CheckOut = () => {
       <div className="datos-checkout">
           <div className="">
             <h4>Datos de envio</h4>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col">
                   <input
@@ -132,6 +127,7 @@ export const CheckOut = () => {
                     className="form-control"
                     placeholder="Nombre"
                     value={datos.nombre}
+                    required
                   />
                 </div>
                 <div className="col">
@@ -142,6 +138,7 @@ export const CheckOut = () => {
                     className="form-control"
                     placeholder="Apellido"
                     value={datos.apellido}
+                    required
                   />
                 </div>
               </div>
@@ -153,6 +150,7 @@ export const CheckOut = () => {
                 className="form-control"
                 placeholder="Direccion"
                 value={datos.direccion}
+                required
               />
               <input
                 onChange={handleChange}
@@ -161,6 +159,7 @@ export const CheckOut = () => {
                 className="form-control"
                 placeholder="Ciudad"
                 value={datos.ciudad}
+                required
               />
               <input
                 onChange={handleChange}
@@ -169,6 +168,7 @@ export const CheckOut = () => {
                 className="form-control"
                 placeholder="Provincia"
                 value={datos.provincia}
+                required
               />
               <input
                 onChange={handleChange}
@@ -177,6 +177,7 @@ export const CheckOut = () => {
                 className="form-control"
                 placeholder="Codigo Postal"
                 value={datos.codigoPostal}
+                required
               />
               <input
                 onChange={handleChange}
@@ -185,18 +186,25 @@ export const CheckOut = () => {
                 className="form-control"
                 placeholder="Email"
                 value={datos.email}
+                required
               />
 
               <button
-                onSubmit={(e) => (handleCheckout, handleSubmit)}
                 type='submit'
                 className="btn btn-primary"
               >
                 Comprar
               </button>
 
-            </form>
-        {pedidoAceptado && <div>aceptado</div> }
+            </form> 
+
+                  {
+                    pedidoAceptado ? 
+                    <div class="alert alert-success text-center" role="alert">
+                      Gracias por tu compra ❤️
+                  </div> : null
+                  }
+              
           </div>
         </div>
     </Container>

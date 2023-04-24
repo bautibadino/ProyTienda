@@ -14,7 +14,7 @@ export const CheckOut = () => {
   const [datos, setDatos] = useState({});
   const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
   const [pedidoAceptado, setPedidoAceptado] = useState(false);
-  
+  const [error, setError] = useState(false);
   const handleChange = (e) => {
     e.preventDefault();
     setDatos({
@@ -39,15 +39,23 @@ export const CheckOut = () => {
       items: cart.cart,
       date: new Date(),
     };
-    await addDoc(ventas, newVenta);
-    setLoading(false);
-    setPedidoAceptado(true);
-
-    setTimeout(() => {
-      // setPedidoAceptado(false)
-    }, 2500);
-    clearCart()
-  };
+    if(cart.cart.length === 0) {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 2500);
+    }
+    else{
+      setPedidoAceptado(true);
+      await addDoc(ventas, newVenta);
+      setLoading(false);
+  
+      setTimeout(() => {
+        setPedidoAceptado(false);
+      }, 2500);
+      clearCart()
+    };
+    }
   
 
 
@@ -118,7 +126,7 @@ export const CheckOut = () => {
           <div className="">
             <h4>Datos de envio</h4>
             <form onSubmit={handleSubmit}>
-              <div className="row">
+              <div className="row g-0">
                 <div className="col">
                   <input
                     onChange={handleChange}
@@ -200,9 +208,14 @@ export const CheckOut = () => {
 
                   {
                     pedidoAceptado ? 
-                    <div class="alert alert-success text-center" role="alert">
+                    <div className="mt-4 alert alert-success text-center animate__animated animate__backInRight" role="alert">
                       Gracias por tu compra ❤️
                   </div> : null
+                  }
+                  {
+                    error ? <div className="mt-4 alert alert-danger text-center animate__animated animate__backInRight" role="alert">
+                      No hay productos en el carrito
+                      </div> : null
                   }
               
           </div>

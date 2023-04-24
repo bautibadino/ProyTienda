@@ -511,6 +511,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .datos-checkout div form{
     display: flex;

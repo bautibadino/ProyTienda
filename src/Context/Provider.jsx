@@ -54,9 +54,9 @@ export const Provider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   }
-  
+
   return (
-    <Context.Provider value={{ addToCart, cart, handleSetCart,getTotalCheckout, getTotalItems, clearCart, }}>
+    <Context.Provider value={{ addToCart, cart, handleSetCart, getTotalCheckout, getTotalItems, clearCart, }}>
       {" "}
       {children}{" "}
     </Context.Provider>

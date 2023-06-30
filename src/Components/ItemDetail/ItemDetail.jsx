@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ItemQuantitySelector } from "./itemQuantitySelector";
+import { ItemQuantitySelector } from "./ItemQuantitySelector";
 import { Context } from "../../Context/Context";
 
 

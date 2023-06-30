@@ -1,6 +1,6 @@
 export * from './CartWidget'
 export * from './ItemList'
 export * from './ItemListContainer'
-export * from './navbar'
+export * from './Navbar'
 export * from './ItemDetail/ItemDetail'
 export * from './ItemDetail/ItemDetailContainer'

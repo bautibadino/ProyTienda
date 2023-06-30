@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import { collection, getDocs } from "firebase/firestore";
-import {db} from '../../firebase/firebase'
+import {db} from '../../firebase/Firebase'
 import { Spinner } from 'react-bootstrap';
 
 

@@ -3,7 +3,7 @@ import { Context } from "../../Context/Context";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase/firebase";
+import { db } from "../../firebase/Firebase";
 import { MDBBtn } from "mdb-react-ui-kit";
 
 

@@ -1,0 +1,32 @@
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.titulo{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    z-index: 99999;
+}
+.iphone-container{
+    z-index: -99;
+}
+.macbook-container{
+    z-index: -99;
+}
+.macbook{
+    filter: blur(2px);
+}
+
+.iphone{
+    filter: blur(2px);
+}

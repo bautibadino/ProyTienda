@@ -11,6 +11,7 @@ import "../src/index.css";
 import { Cart } from "./Components/Cart/Cart";
 import { Provider } from "./Context/Provider";
 import { CheckOut } from "./Components/Cart/CheckOut";
+import { Home } from "./Components/HomePage/Home";
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
         <Navbar />
         <section>
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/products" element={<ItemListContainer/>}/>
           <Route path="/:category" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/carrito" element={<Cart />} />

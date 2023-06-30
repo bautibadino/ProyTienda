@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ref, getDownloadURL } from "firebase/storage";
 import { Button, Container, NavLink, Spinner } from "react-bootstrap";
 import './homeStyles.css'
-import { storage } from "../../firebase/firebase";
+import { storage } from "../../firebase/Firebase";
 import { useNavigate } from "react-router-dom";
-export const Home = () => {
 
+export const Home = () => {
+//Estado de urls de imagenes y de loading para tener tiempo de carga
   const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

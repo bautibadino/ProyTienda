@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../../Context/Context'
 import { Link, useNavigate } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 export const Cart = () => {
   const {cart, handleSetCart} = useContext(Context)
@@ -29,13 +30,13 @@ export const Cart = () => {
               <img src={item.url_imagen} alt="" />
               <p>{item.cantidad}</p>
               <p>{item.producto}</p>
-              <p>{item.precio}</p>
+              <p>${item.precio}</p>
               <p>total: ${parseInt(item.precio.replace('$', '')) * item.cantidad}</p>
-              <button onClick={() => handleSetCart(item.id)}>x</button>
+              <Button onClick={() => handleSetCart(item.id)}>x</Button>
             </li>
           ))} 
         </ul>
-        <button onClick={handleCheckOut}>Comprar todo</button>
+        <Button onClick={handleCheckOut}>Comprar todo</Button>
       </div>
     )
   }

@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Provider>
         <Navbar />
-        <section>
+        <section className="d-flex justify-content-center">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/products" element={<ItemListContainer/>}/>

@@ -25,7 +25,7 @@ export const Home = () => {
       return null;
     }
   };
-  const arrayImages = ['iphone.png', 'nubes.png', 'macbook.png'];
+  const arrayImages = ['iphone.png', 'macbook.png'];
   
   const loadImages = async ()  =>{
     setIsLoading(true);
@@ -38,14 +38,17 @@ export const Home = () => {
       if(imageUrl){
         urls.push(imageUrl);
       }
-
+      
     }
     setImageUrls(urls)
+    setTimeout(() => {
     setIsLoading(false)
+    }, 2000);
   }
 
   useEffect(()=> {
     loadImages()
+
   },[])
 
   return (
@@ -63,7 +66,7 @@ export const Home = () => {
             <img className="iphone animate__animated animate__fadeInTopLeft" src={imageUrls[0]} alt="iphone" />
           </div>
           <div className="macbook-container">
-            <img className="macbook animate__animated animate__fadeInBottomRight" src={imageUrls[2]} alt="macbook" />
+            <img className="macbook animate__animated animate__fadeInBottomRight" src={imageUrls[1]} alt="macbook" />
           </div>
         </>
       )}

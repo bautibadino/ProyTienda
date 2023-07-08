@@ -2,7 +2,7 @@ import { Button } from "bootstrap";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Item } from "./Item";
-import { Card } from "./Card";
+import { Card } from "../CARDS/Card";
 
 
 export const ItemList = ({ productos }) => {

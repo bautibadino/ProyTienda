@@ -57,7 +57,7 @@ export const CheckOut = () => {
     };
     }
   
-
+  console.log(totalCheckoutitems)
 
   return (
     // CONTAINER GENERAL CHECKOUT
@@ -66,12 +66,12 @@ export const CheckOut = () => {
         {/* SI EL CARRITO TIENE 0 PRODUCTOS MUESTRA ESTO   */}
         <h4>Tus productos</h4>
         {cart.cart.length === 0 ? (
-          <>
+          <div className="carro-vacio">
             <p>no hay productos en el carrito</p>
             <MDBBtn outline className="p-3 d-flex align-items-center">
               <Link to="/">regresar</Link>
             </MDBBtn>
-          </>
+          </div>
         ) : (
           // SI EL CARRITO TIENE MAS DE 0 PRODUCTOS MUESTRA LO SIGUIENTE
           <div className="">
@@ -118,6 +118,7 @@ export const CheckOut = () => {
           </div>
             )}
             <strong>TOTAL: ${totalCheckoutitems}</strong>
+            
           </div>
       
 

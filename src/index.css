@@ -1,3 +1,4 @@
+/* #region */
 html,
 body,
 div,
@@ -73,7 +74,6 @@ menu,
 nav,
 output,
 ruby,
-section,
 summary,
 time,
 mark,
@@ -137,15 +137,7 @@ ul {
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
-
-/* restablecer css */
-/* restablecer css */
-/* restablecer css */
-/* restablecer css */
-
-
-
-
+/* #region */
 
 .active {
     color: gray;
@@ -258,27 +250,24 @@ body {
     width: 100%;
     height: 75vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .container .detalle-producto {
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #8787876d;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 2rem;
@@ -286,7 +275,7 @@ body {
     color: white;
 }
 
-.conteiner-img {
+.contenedor-img img {
     object-fit: contain;
     width: 100%;
 }
@@ -350,41 +339,47 @@ button {
     outline: none;
 }
 
-
+.carro-vacio{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .carrito {
     cursor: pointer;
-    margin-right: 50px;
+
 }
 
 .contenedor-carrito {
     width: 100%;
-    height: calc(100vh - 45px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: #2b2b2b85;
+    padding-top: 2rem;
 }
 
 .lista-carrito {
-    background-color: rgba(255, 255, 255, 0.615);
-    width: 70%;
-    height: 90%;
+    width: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    box-shadow: rgba(99, 99, 99, 0.619) 0px 2px 8px 0px;
+
 
 }
 
 .item-carrito {
     width: 100%;
+    margin-top: 1rem;
+    border-radius: 4px;
+    height: 6rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: #2020203e;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
@@ -396,60 +391,18 @@ button {
     overflow: hidden;
 }
 
-.cards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 
-}
-
-.cards .card {
-    min-width: 300px;
-    min-height: 80vh;
-    max-height: 80vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.3fr 1.3fr 0.4fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        "grid-1-card"
-        "grid-2-card"
-        "grid-3-card";
-
-}
-
-.cards .card img {
-    width: 100%;
-    object-fit: contain;
-    overflow: hidden;
-}
-
-.cards .card .descripcion-card {
-    min-height: 30vh;
-}
-
-.grid-1-card {
-    grid-area: grid-1-card;
-}
-
-.grid-2-card {
-    grid-area: grid-2-card;
-}
-
-.grid-3-card {
-    grid-area: grid-3-card;
-}
 
 .item-detail .contenedor-img img{
     width: 100%;
     height: 100%;
     display: flex;
+    border-radius: 15px;
     align-items: center;
     justify-content: center;
     object-fit: contain;
 }
+
 .container-checkout {
     display: flex;
     flex-direction: row;

@@ -21,6 +21,7 @@ export const ItemDetail = ({ item }) => {
     <div className="w-100 item-detail">
       <div className="contenedor-img w-75 d-flex flex-column h-100 align-items-center justify-content-center">
           <img src={url_imagen} alt="" className="" />
+      </div>
         <div className="container">
           <div className="detalle-producto">
             <h4>{producto}</h4>
@@ -35,7 +36,6 @@ export const ItemDetail = ({ item }) => {
 
 
         </div>
-      </div>
     </div>
   );
 };

@@ -11,7 +11,35 @@ export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false)
   const { id } = useParams();
 
+  const {category} = useParams()
+  
+  const pagesTitle = (category) => {
+    switch (category) {
+      case "iphone":
+        document.title = "iPhone";
+        break;
+      case "macbook":
+        document.title = "MacBook";
+        break;
+      case "ipad":
+        document.title = "iPad";
+        break;
+      case 'products':
+        document.title = 'Todos los productos'
+        break;
+      case 'carrito':
+        document.title = 'Carrito'
+        break;
+        default:
+          document.title = 'Apple Store'
+        break
+    }
+  }
 
+  
+  useEffect(() => {
+    pagesTitle(category)
+  }, [category])
   useEffect(() => {
     setLoading(true);
     const productosBase = collection(db, 'products');

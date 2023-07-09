@@ -48,7 +48,7 @@ export const Home = () => {
 
   useEffect(()=> {
     loadImages()
-
+    document.title = 'Apple store'
   },[])
 
   return (

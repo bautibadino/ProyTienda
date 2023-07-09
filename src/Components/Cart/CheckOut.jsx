@@ -8,13 +8,13 @@ import { MDBBtn } from "mdb-react-ui-kit";
 
 
 export const CheckOut = () => {
-  const cart = useContext(Context);
-  const {getTotalCheckout, getTotalItems, clearCart} = useContext(Context);
+  const {cart, getTotalCheckout, getTotalItems, clearCart} = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [datos, setDatos] = useState({});
   const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
   const [pedidoAceptado, setPedidoAceptado] = useState(false);
   const [error, setError] = useState(false);
+
   const handleChange = (e) => {
     e.preventDefault();
     setDatos({
@@ -56,7 +56,9 @@ export const CheckOut = () => {
       clearCart()
     };
     }
-  
+    useEffect(() => {
+      document.title = "Checkout";
+    }, []);
   console.log(totalCheckoutitems)
 
   return (
@@ -65,7 +67,7 @@ export const CheckOut = () => {
       <div className="productos-checkout">
         {/* SI EL CARRITO TIENE 0 PRODUCTOS MUESTRA ESTO   */}
         <h4>Tus productos</h4>
-        {cart.cart.length === 0 ? (
+        {cart.length === 0 ? (
           <div className="carro-vacio">
             <p>no hay productos en el carrito</p>
             <MDBBtn outline className="p-3 d-flex align-items-center">
@@ -92,7 +94,7 @@ export const CheckOut = () => {
               </div>
               <ul className="lista-productos">
                 {/* LISTA CARRO */}
-                {cart.cart.map((item) => (
+                {cart.map((item) => (
                   <li
                     className="product-checkout d-flex justify-content-around align-items-center"
                     key={item.id}

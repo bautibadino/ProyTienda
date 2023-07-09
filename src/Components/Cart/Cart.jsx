@@ -1,13 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from '../../Context/Context'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 export const Cart = () => {
   const {cart, handleSetCart} = useContext(Context)
-
   const navigate = useNavigate();
-
+  useEffect(() => {
+    document.title = 'Carrito'
+  }, [])
   const handleCheckOut = () =>{
     navigate('/carrito/checkout');
   }
@@ -15,9 +16,9 @@ export const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div>
-        <p>no hay productos en el carrito</p>
-        <Link to='/'>regresar</Link>
+      <div className='carro-vacio'>
+        <p>tu carrito esta vacío, regresa para elegir tu producto 📱</p>
+        <Button ><Link className='btn btn-primary' to='/'>regresar</Link></Button>
       </div>
     )
   } else {

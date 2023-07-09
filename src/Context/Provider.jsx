@@ -1,11 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Context } from "./Context";
+import { useParams } from "react-router-dom";
 
 export const Provider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [item, setItem] = useState({});
+  const {category} = useParams()
+  
+  const pagesTitle = (category) => {
+    switch (category) {
+      case "iphone":
+        document.title = "iPhone";
+        break;
+      case "macbook":
+        document.title = "MacBook";
+        break;
+      case "ipad":
+        document.title = "iPad";
+        break;
+      case 'products':
+        document.title = 'Todos los productos'
+        break;
+      case 'carrito':
+        document.title = 'Carrito'
+        break;
+        default:
+          document.title = 'Apple Store'
+        break
+    }
+  }
 
   
+  useEffect(() => {
+    pagesTitle(category)
+  }, [category])
+
   const addToCart = (item, quantity) => {
     const numberPrice = Number(item.precio);
 

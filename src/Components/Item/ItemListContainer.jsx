@@ -49,6 +49,7 @@ export const ItemListContainer = () => {
       });
   }, [category]);
 
+  
   return (
     <div className="container w-100 animate__animated animate__fadeInLeftBig">
       {loading ? <div className='container-spinner'><Spinner/></div> : <ItemList productos={productos} />}

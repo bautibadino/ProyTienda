@@ -59,6 +59,7 @@ export const CheckOut = () => {
     useEffect(() => {
       document.title = "Checkout";
     }, []);
+    
   console.log(totalCheckoutitems)
 
   return (

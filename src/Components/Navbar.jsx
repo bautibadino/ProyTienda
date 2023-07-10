@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "animate.css";
 import { CartWidget } from "./CartWidget";
 import { Nav } from "react-bootstrap";
+import { Context } from "../Context/Context";
 
 export const Navbar = () => {
+  const value = useContext(Context);
+  const {cart}  = value;
+  const [cartLength, setCartLength] = useState(0)
+
+  useEffect(() => {
+    setCartLength(cart.length)
+  }, [cart.length])
 
   return (
     <nav className="animate__animated animate__bounce navbar navbar-expand-sm navbar navbar-dark bg-dark">
@@ -43,8 +51,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </div>
-      <NavLink to={'/carrito'} className="nav-item nav-link link">
+      <NavLink to={'/carrito'} className="carrito nav-item nav-link link">
         <CartWidget />
+        <span className="badge bg-secondary">{cartLength}</span>
       </NavLink>
     </nav>
   );

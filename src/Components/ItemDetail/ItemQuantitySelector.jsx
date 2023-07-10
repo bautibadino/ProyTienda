@@ -1,6 +1,7 @@
 import { MDBBtn } from "mdb-react-ui-kit";
 
 export const ItemQuantitySelector = ({ value, onValueChange, onAdd }) => {
+  
   const handleIncrement = () => {
     onValueChange(value + 1);
   };

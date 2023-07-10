@@ -6,7 +6,7 @@ export const Provider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [item, setItem] = useState({});
   const {category} = useParams()
-  
+
   const pagesTitle = (category) => {
     switch (category) {
       case "iphone":

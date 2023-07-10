@@ -6,7 +6,6 @@ import { Card } from "../CARDS/Card";
 
 
 export const ItemList = ({ productos }) => {
-  console.log(productos);
   const {category} = useParams()
   
   const pagesTitle = (category) => {

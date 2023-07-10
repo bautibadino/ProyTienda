@@ -8,8 +8,8 @@ export const ItemDetail = ({ item }) => {
   const value = useContext(Context);
   const { addToCart, cart } = value;
   const { producto, precio, caracteristicas, url_imagen, category, id, stock } = item;
-    console.log(item)
-  const onAdd = (counter) => {
+  
+    const onAdd = (counter) => {
     addToCart(item, counter);
     setCounter(1);
   };

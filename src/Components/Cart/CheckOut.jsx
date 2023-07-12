@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/Firebase";
 import { MDBBtn } from "mdb-react-ui-kit";
-
+import "./cartStyles.css"
 
 export const CheckOut = () => {
   const {cart, getTotalCheckout, getTotalItems, clearCart} = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [datos, setDatos] = useState({});
-  const [totalCheckoutitems, setTotalCheckoutitems] = useState(0);
   const [pedidoAceptado, setPedidoAceptado] = useState(false);
   const [error, setError] = useState(false);
-
+  let totalCheckoutitems;
   const handleChange = (e) => {
     e.preventDefault();
     setDatos({
@@ -28,18 +27,18 @@ export const CheckOut = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    getTotalCheckout(cart.cart)
-    getTotalItems(cart.cart)
-    
+    getTotalCheckout(cart);
+    getTotalItems(cart);
+
     setLoading(true);
     const ventas = collection(db, "orders");
 
     const newVenta = {
       buyer: datos,
-      items: cart.cart,
+      items: cart,
       date: new Date(),
     };
-    if(cart.cart.length === 0) {
+    if(cart.length === 0) {
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -59,12 +58,11 @@ export const CheckOut = () => {
     useEffect(() => {
       document.title = "Checkout";
     }, []);
-    
-  console.log(totalCheckoutitems)
+
 
   return (
     // CONTAINER GENERAL CHECKOUT
-    <Container className="d-flex flex-row">
+    <Container className="container d-flex flex-row">
       <div className="productos-checkout">
         {/* SI EL CARRITO TIENE 0 PRODUCTOS MUESTRA ESTO   */}
         <h4>Tus productos</h4>
@@ -118,9 +116,9 @@ export const CheckOut = () => {
                 ))}
               </ul>
             </div>
+            <strong>TOTAL: ${getTotalCheckout(cart)}</strong>
           </div>
             )}
-            <strong>TOTAL: ${totalCheckoutitems}</strong>
             
           </div>
       

@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from 'react'
 import { Context } from '../../Context/Context'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import './cartStyles.css'
 
 export const Cart = () => {
-  const {cart, handleSetCart} = useContext(Context)
+  const {cart, handleSetCart, getTotalCheckout} = useContext(Context)
   const navigate = useNavigate();
   useEffect(() => {
     document.title = 'Carrito'
@@ -32,11 +33,13 @@ export const Cart = () => {
               <p>{item.cantidad}</p>
               <p>{item.producto}</p>
               <p>${item.precio}</p>
-              <p>total: ${parseInt(item.precio.replace('$', '')) * item.cantidad}</p>
+              <p>${parseInt(item.precio.replace('$', '')) * item.cantidad}</p>
               <Button onClick={() => handleSetCart(item.id)}>x</Button>
             </li>
           ))} 
         </ul>
+        <p className='mt-3 mb-3'>TOTAL: <strong>${getTotalCheckout(cart)}</strong></p>
+
         <Button onClick={handleCheckOut}>Comprar todo</Button>
       </div>
     )
